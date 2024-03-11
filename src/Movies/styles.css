@@ -1,0 +1,148 @@
+/* styles.css */
+
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #4CAF50;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spinner 2s linear infinite;
+    /* Adjusted animation duration to 2s */
+}
+
+.show-list-container {
+    margin: 50px auto;
+    padding: 5rem;
+    /* Adjust as needed */
+}
+
+.show-list-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.show-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    /* Distribute items evenly */
+}
+
+.show-list-item {
+    flex: 0 0 calc(25% - 20px);
+    /* Adjust as needed */
+    padding: 0.1rem;
+    box-sizing: border-box;
+    /* Include padding in width calculation */
+}
+
+.show-card {
+    width: 100%;
+    /* Fill the width of the item */
+    height: 550px;
+
+    border-bottom: 2px solid #4CAF50;
+    border-top: 2px solid #4CAF50;
+
+    padding: 20px;
+    box-sizing: border-box;
+    /* Include padding in width calculation */
+    margin-bottom: 20px;
+    /* Add some bottom margin */
+    color: azure;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: z-index 0.3s ease;
+    /* Smooth transition for z-index */
+}
+
+.show-card:hover {
+    box-shadow: 0 0 20px rgba(76, 175, 80, 0.7);
+    /* Glow effect */
+    z-index: 1;
+    /* Increase z-index on hover */
+}
+
+.show-card h2 {
+    font-size: 1.2rem;
+}
+
+.image-container {
+    margin-bottom: 10px;
+    /* Adjust as needed */
+}
+
+.show-card img {
+    width: 100%;
+    /* Adjust the width as needed */
+    height: 300px;
+    /* Adjust the height as needed */
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding-top: 2px;
+}
+
+.show-card {
+    padding: 0;
+    border-radius: 15px;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.buttons-container button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    transition: transform 0.3s ease;
+
+    transition: border-radius 0.3s ease;
+}
+
+.buttons-container button:hover {
+    transform: scale(1.05);
+    border-radius: 8px;
+}
+
+.stream-button {
+    background-color: #6F0202;
+    background: linear-gradient(to right, #6F0202, #E50914);
+    /* Red color for the stream button */
+}
+
+.comments-button {
+    background-color: #4CAF50;
+    background: linear-gradient(to right, #4CAF50, #45a049);
+    /* Change color for the comments button */
+}
+
+.comments-button :hover {
+    background-color: #4CAF50;
+}

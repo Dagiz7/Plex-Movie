@@ -1,0 +1,125 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #fff;
+    padding: 20px;
+    position: fixed;
+    top: -50px;
+    /* Initially hide the navbar above the viewport */
+    width: 100%;
+    height: 100px;
+    z-index: 2;
+    transition: top 0.5s ease;
+
+    /* Add transition effect */
+}
+
+/* Hover effect on bottom */
+.navbar::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: transparent;
+    transition: background-color 0.3s ease;
+    animation: glowing 2s infinite alternate;
+    /* Add glowing animation */
+}
+
+@keyframes glowing {
+    0% {
+        background-color: #4CAF50;
+        /* Initial color */
+        box-shadow: 0 0 10px #4CAF50;
+        /* Initial shadow */
+    }
+
+    100% {
+        background-color: transparent;
+        /* End color */
+        box-shadow: 0 0 40px #4CAF50;
+        /* End shadow */
+    }
+}
+
+.navbar:hover::after {
+    background-color: #4CAF50;
+    filter: blur(0);
+    /* Remove blur effect on hover */
+}
+
+.navbar-brand img {
+    height: 60px;
+    padding-left: 150px;
+    padding-top: 50px;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    padding-right: 150px;
+    padding-top: 35px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: 20px;
+
+}
+
+.navbar-links a {
+    color: lightgray;
+    text-decoration: none;
+    margin-left: 25px;
+
+    transition: transform 0.3s ease;
+    /* Add transition for link movement */
+    transform: translateX(100%);
+}
+
+.navbar-links a:hover {
+    color: #4CAF50;
+    ;
+}
+
+/* Hamburger Icon */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+        top: 0;
+        /* Ensure the navbar remains visible after toggling the hamburger menu */
+    }
+
+    .navbar-links {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 10px;
+        margin-left: 0;
+    }
+
+    .navbar-links a {
+        margin: 10px 0;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .show-links .navbar-links {
+        display: flex;
+        /* Show the links when .show-links class is applied */
+    }
+}

@@ -1,0 +1,156 @@
+/* CommentPopup.css */
+
+.comment-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Transparent black background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    /* Apply a blur effect only to the overlay */
+}
+
+.comment-popup-content {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Semi-transparent white background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
+    color: white;
+    display: flex;
+    max-width: 80%;
+    height: 80%;
+    overflow-y: auto;
+}
+
+.comment-popup-content .content {
+    width: 50%;
+    /* Set content width to 50% */
+    padding: 0 20px;
+    /* Added space between image and content */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Align content at the bottom */
+}
+
+.comment-popup-content .show-details {
+    margin-bottom: 20px;
+}
+
+.comment-popup-content .image-container {
+    width: 50%;
+    /* Set width to 50% */
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.comment-popup-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.comment-popup-content h2 {
+    margin-bottom: 10px;
+}
+
+.comment-popup-content p {
+    margin-bottom: 5px;
+}
+
+.comment-popup-content input,
+.comment-popup-content textarea {
+    width: calc(100% - 40px);
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.comment-popup-content button {
+    padding: 12px 24px;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.comment-popup-content button:hover {
+    background-color: #0056b3;
+}
+
+.submitted-comments {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.submitted-comments .comment {
+    background-color: #444;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.submitted-comments .comment p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.submitted-comments .comment p strong {
+    color: #007bff;
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    /* Semi-transparent black background */
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    transition: opacity 0.3s;
+    backdrop-filter: blur(10px);
+    /* Apply blur effect to the background */
+}
+
+.close-button::before {
+    content: '';
+    /* Create a pseudo-element to hold the background image */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../Assets/icons8-close-120.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+    /* Adjust as needed */
+    opacity: 0.8;
+    /* Adjust opacity of the background image */
+}
+
+.close-button:hover {
+    opacity: 1;
+    /* Adjust opacity on hover as needed */
+}
